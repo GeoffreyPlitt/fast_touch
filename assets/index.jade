@@ -1,0 +1,41 @@
+!!! 5
+html(lang='en')  
+  head  
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    != js('http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
+    != js('jquery.fixtouch')
+    != js('jquery.rubbable')
+    :stylus
+      body
+        -webkit-user-select: none
+        overflow: hidden
+        width: 100%
+        font-size: 1em
+        margin: 0
+      .button
+        cursor: pointer
+        font-size: 5em
+        display: inline-block
+        background: green
+        margin: 1px
+        pointer-events: auto
+      .fake-active
+        background: red
+      #padding1
+        padding: 0px
+        pointer-events: none
+
+  body
+    #padding1
+
+    :coffee
+      # create buttons
+      for x in [1..20]
+        $('#padding1').append("<div id='b#{x}' class='button'>&nbsp;&nbsp;&nbsp;</div>")
+
+      $('.button').fixtouch()
+
+      $('.button').rubbable \
+        (-> $(arguments[0]).addClass 'fake-active'),
+        (-> $(arguments[0]).removeClass 'fake-active')

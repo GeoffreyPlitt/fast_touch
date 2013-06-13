@@ -1,0 +1,19 @@
+{
+  "name": "fast_touch",
+  "scripts": {
+    "start" : "node_modules/coffee-script/bin/coffee -w app.coffee"
+  },
+  "version": "0.0.1",
+  "private": true,
+  "readmeFilename": "README.md",
+  "dependencies":
+    {
+    "coffee-script": "*",
+    "express.io": "*",
+    "connect-assets": "*",
+    "connect-assets-jade": "*",
+    "jade": "*",
+    "stylus": "*",
+    "nib": "*"
+    }
+}
