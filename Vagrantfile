@@ -28,6 +28,9 @@ $BOOTSTRAP_SCRIPT = <<EOF
 	gem install forward
 
 
-	# last step is manual. once vagrant is up, run the server, and then:
+	# last steps are manual. once "vagrant up" is done, "vagrant ssh" in to it, and then:
+	# cd /vagrant
+	# npm install
+	# npm start &
 	# forward 8080
 EOF
